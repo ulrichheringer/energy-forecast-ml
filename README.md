@@ -1,4 +1,6 @@
-# energy-forecast-ml
+# Energy Consumption Forecast
+
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)  [![statsmodels](https://img.shields.io/badge/statsmodels-4051b5?style=for-the-badge&logo=python&logoColor=white)](https://www.statsmodels.org/)  [![MIT License](https://img.shields.io/badge/License-MIT-2ea44f?style=for-the-badge)](LICENSE)  ![Synthetic Data](https://img.shields.io/badge/Data-Synthetic-6b7280?style=for-the-badge)
 
 Forecasts daily energy use with SARIMA and a time-based evaluation split.
 
