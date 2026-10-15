@@ -1,12 +1,12 @@
 # energy-forecast-ml
 
-Prevê consumo energético diário com SARIMA, separação temporal de avaliação e dados sintéticos sazonais.
+Forecasts daily energy use with SARIMA and a time-based evaluation split.
 
-## Dados
+## Data
 
-O pipeline gera dados sintéticos determinísticos localmente, identificados como sintéticos em `pipeline.py`. Nenhum dado privado ou download externo é necessário. A divisão e a semente de avaliação são descritas junto às métricas abaixo.
+A deterministic synthetic time series is generated locally in `pipeline.py`. It requires no private data or external download.
 
-## Instalação e execução
+## Install and run
 
 ```bash
 python -m venv .venv
@@ -18,8 +18,10 @@ python cli.py train --model model.joblib
 python cli.py predict --model model.joblib
 ```
 
-## Métricas obtidas
+## Evaluation results
 
-Seed 42: SARIMA avaliado cronologicamente em 90 dias finais, após 1.005 dias de treino — MAE **2,9880 MWh**, RMSE **3,7568 MWh**. A série sintética tem padrão semanal, tendência pequena e ruído normal; os erros não estimam desempenho em medidores reais.
+With seed 42, SARIMA was trained on 1,005 days and evaluated on the final 90 days. The forecast had an MAE of 2.9880 MWh and an RMSE of 3.7568 MWh. The generated series has a weekly pattern, a small trend, and Gaussian noise; these errors do not estimate performance on real meter readings.
 
-Limitação: dados e regras de geração simplificados; antes de uso real, substitua-os por dados com licença e proveniência adequadas e valide fora da amostra.
+## Limitations
+
+The synthetic series is intentionally simple. Real forecasting would require energy data from the target site and evaluation across multiple seasonal periods.
